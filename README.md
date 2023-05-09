@@ -6,7 +6,7 @@
    flights will be over the head)
 
 ## Image (generated with Shedevrum.ai)
-![shedevrium_planes.jpeg](..%2F..%2FPictures%2Fshedevrium_planes.jpeg)
+![img_1.png](img_1.png)
 
 ## Reqs: 
 
