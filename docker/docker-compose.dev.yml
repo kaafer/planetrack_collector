@@ -1,0 +1,17 @@
+version: "3"
+networks:
+  data-net:
+    driver: bridge
+
+services:
+  data-postgres:
+    image: postgres:latest
+    networks:
+      - data-net
+    ports:
+      - 127.0.0.1:5433:5432
+    volumes:
+      - ../bin/pg-init-scripts:/docker-entrypoint-initdb.d
+    environment:
+      POSTGRES_MULTIPLE_DATABASES: dev, test
+      POSTGRES_HOST_AUTH_METHOD: trust
