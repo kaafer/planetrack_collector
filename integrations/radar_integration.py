@@ -1,3 +1,4 @@
+import logging
 from typing import Optional
 
 import pandas as pd
@@ -31,8 +32,11 @@ def build_flights_report(flights: Optional[dict] = None):
             flight.get_heading()
         ] for flight in flights],
         columns=flight_details_headers)
-    profile = ProfileReport(df, title="Flights In Moment Report")
-    profile.to_file(settings.TEMPLATES_PATH / "flights_in_moment.html")
+    try:
+        profile = ProfileReport(df, title="Flights Overall Report")
+        profile.to_file(settings.TEMPLATES_PATH / "flights_overall.html")
+    except ValueError as e:
+        logging.info(e)
 
 
 def build_tracks_report(tracks: Optional[dict] = None):
