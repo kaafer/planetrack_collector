@@ -25,7 +25,7 @@ class DevelopmentConfig(BaseConfig):
     DEBUG = True
     RADAR_LOGIN = os.environ.get('RADAR_LOGIN')
     RADAR_PASSWORD = os.environ.get('RADAR_PASSWORD')
-    ARIA = os.environ.get('TRACKING_ARIA', "60.016,59.682,29.978,30.57")  ##Pulkovo
+    AREA = os.environ.get('TRACKING_AREA', "60.016,59.682,29.978,30.57")  ##Pulkovo
 
 
 class ProductionConfig(BaseConfig):
